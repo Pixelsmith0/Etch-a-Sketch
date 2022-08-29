@@ -1,13 +1,23 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
 #grid-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 960px;
 }
 
 .square {
     background-color:darkgrey;
-    height: 90px;
-    width: 90px;
+    height: 55px;
+    width: 55px;
     margin: 1px;
     border-radius: 2px;
+}
+
+.square:hover {
+    background-color: aqua;
 }
