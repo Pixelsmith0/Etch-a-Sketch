@@ -3,13 +3,17 @@ body {
     justify-content: center;
 }
 
-#grid-container {
+#row-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     width: 960px;
+    height: 960px;
 }
 
+.row {
+    display: flex;
+    flex-direction: column;
+}
 .square {
     background-color:darkgrey;
     height: 55px;
