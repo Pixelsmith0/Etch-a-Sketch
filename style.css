@@ -16,12 +16,12 @@ body {
 }
 .square {
     background-color:darkgrey;
-    height: 55px;
-    width: 55px;
-    margin: 1px;
+    height: 25px;
+    width: 25px;
+    margin: .5px;
     border-radius: 2px;
 }
 
-.square:hover {
+.square-hover {
     background-color: aqua;
 }
