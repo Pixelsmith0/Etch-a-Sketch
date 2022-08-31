@@ -1,9 +1,20 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+#generate-btn {
+    align-self: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 12px 6px;
+    /* border-radius: 10px; */
+    margin-bottom: 20px;
 }
 
 #row-container {
+    align-self: center;
     display: flex;
     justify-content: center;
     width: 960px;
@@ -16,12 +27,12 @@ body {
 }
 .square {
     background-color:darkgrey;
-    height: 25px;
-    width: 25px;
-    margin: .5px;
-    border-radius: 2px;
+    height: 15px;
+    width: 15px;
+    margin: .4px;
 }
 
 .square-hover {
     background-color: aqua;
 }
+
