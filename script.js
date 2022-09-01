@@ -5,11 +5,11 @@ square.classList.add('square');
 row.classList.add('row');
 let userInput = getUserInput();
 
-//Asks the user to input a number <=100, if they input a number >100, defaults to 100. Returns that value
+//Asks the user to input a number <=50, if they input a number >50, defaults to 50. Returns that value
 function getUserInput() {
-    let userInput = prompt('Please enter the number of rows you would like. (Max 100)', '');
-    if (userInput > 100) {
-        userInput = 100;
+    let userInput = prompt('Please enter the number of rows you would like. (Max 50)', '');
+    if (userInput > 50) {
+        userInput = 50;
     }
     return userInput;
 };
@@ -38,6 +38,8 @@ function addHoverEffect() {
     });
 };
 
+// When the mouse enters a .square div, applies a random color with HSL(Hue, Saturation, Lightness). When re-entering a     
+// .square div, checks the lightness percentage and will reduce by 7% if above 0%.  
 function addRgbEffect() {
     document.querySelectorAll('.square').forEach(square => {
         let lightness = 70;
@@ -71,7 +73,7 @@ document.querySelector('#generate-btn').addEventListener('click', (e) => {
     addSquares(newInput);
     addHoverEffect();
 });
-
+// Same as the generate button but uses addRgbEffect instead of addHoverEffect.
 document.querySelector('#rgb-btn').addEventListener('click', (e) => {
     clearGrid();
     let newInput = getUserInput();
