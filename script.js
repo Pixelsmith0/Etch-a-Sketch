@@ -4,6 +4,7 @@ const square = document.createElement('div');
 square.classList.add('square');
 row.classList.add('row');
 let userInput = getUserInput();
+
 //Asks the user to input a number <=100, if they input a number >100, defaults to 100. Returns that value
 function getUserInput() {
     let userInput = prompt('Please enter the number of rows you would like. (Max 100)', '');
@@ -36,6 +37,19 @@ function addHoverEffect() {
         });
     });
 };
+
+function addRgbEffect() {
+    document.querySelectorAll('.square').forEach(square => {
+        let lightness = 70;
+        square.addEventListener('mouseenter', (e) => {
+            square.style.backgroundColor = `hsl(${360 * Math.random()}, 100%, ${lightness}%`;
+            if (lightness > 0) {
+                lightness -= 7;
+            };
+        });
+    });
+};
+
 // Removes all ".row" divs
 function clearGrid() {
     const toRemove = document.querySelectorAll('.row')
@@ -56,4 +70,12 @@ document.querySelector('#generate-btn').addEventListener('click', (e) => {
     addRows(newInput);
     addSquares(newInput);
     addHoverEffect();
+});
+
+document.querySelector('#rgb-btn').addEventListener('click', (e) => {
+    clearGrid();
+    let newInput = getUserInput();
+    addRows(newInput);
+    addSquares(newInput);
+    addRgbEffect();
 });
